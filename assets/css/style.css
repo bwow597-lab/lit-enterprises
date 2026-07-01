@@ -183,6 +183,11 @@ a,button { transition:color var(--transition), background var(--transition), bor
 /* Value triad */
 .triad { display:grid; gap:var(--space-6); grid-template-columns:1fr; margin-top:var(--space-12); }
 @media (min-width:760px){ .triad { grid-template-columns:repeat(3,1fr); } }
+/* Five-pillar value grid */
+.pentad { display:grid; gap:var(--space-5); grid-template-columns:1fr; margin-top:var(--space-12); }
+@media (min-width:720px){ .pentad { grid-template-columns:repeat(2,1fr); } }
+@media (min-width:1040px){ .pentad { grid-template-columns:repeat(3,1fr); } }
+.pentad .value-card .num { font-family:var(--font-display); font-size:var(--text-sm); color:var(--accent); letter-spacing:.02em; display:block; margin-bottom:var(--space-3); }
 .value-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:var(--space-8); transition:transform var(--transition), box-shadow var(--transition), border-color var(--transition); }
 .value-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:var(--accent); }
 .value-card .ic { width:46px; height:46px; border-radius:12px; display:grid; place-items:center; margin-bottom:var(--space-5); background:linear-gradient(135deg, var(--accent), var(--ember)); color:#fff; }
