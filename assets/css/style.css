@@ -338,3 +338,75 @@ a,button { transition:color var(--transition), background var(--transition), bor
 
 /* spark canvas (subtle, restrained) */
 #sparks { position:absolute; inset:0; z-index:1; pointer-events:none; }
+
+/* ============================================================
+   BRAND SHOWCASE PAGES
+   ============================================================ */
+
+/* Full-bleed brand hero with image */
+.brand-hero { position:relative; min-height:clamp(460px, 72vh, 720px); display:flex; align-items:flex-end; overflow:hidden; background:var(--primary); }
+.brand-hero-img { position:absolute; inset:0; z-index:0; }
+.brand-hero-img img { width:100%; height:100%; object-fit:cover; }
+.brand-hero::after { content:""; position:absolute; inset:0; z-index:1;
+  background:linear-gradient(180deg, rgba(20,32,26,0.30) 0%, rgba(20,32,26,0.20) 40%, rgba(20,32,26,0.82) 100%); }
+.brand-hero .wrap { position:relative; z-index:2; padding-block:var(--space-16); width:100%; }
+.brand-hero .eyebrow { color:var(--accent-warm); }
+.brand-hero h1 { font-size:var(--text-3xl); color:#fff; font-weight:400; letter-spacing:-0.015em; line-height:1.02; max-width:16ch; margin-top:var(--space-3); }
+.brand-hero .tagline { margin-top:var(--space-5); color:rgba(255,255,255,0.86); font-size:var(--text-lg); max-width:52ch; line-height:1.5; }
+.brand-hero .actions { margin-top:var(--space-8); display:flex; flex-wrap:wrap; gap:var(--space-4); }
+
+/* Facts strip */
+.brand-facts { border-bottom:1px solid var(--divider); background:var(--surface); }
+.brand-facts .wrap { display:grid; grid-template-columns:1fr; gap:var(--space-6); padding-block:var(--space-8); }
+@media (min-width:720px){ .brand-facts .wrap { grid-template-columns:repeat(3,1fr); gap:var(--space-10); } }
+.fact .k { font-size:var(--text-xs); letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); font-weight:600; }
+.fact .v { margin-top:var(--space-2); font-size:var(--text-base); color:var(--text); line-height:1.5; }
+
+/* Intro / what they do */
+.brand-intro h2 { font-size:var(--text-2xl); font-weight:400; letter-spacing:-0.01em; max-width:20ch; }
+.brand-intro .lede { margin-top:var(--space-6); font-size:var(--text-lg); color:var(--text-muted); max-width:64ch; line-height:1.6; }
+
+/* Two-column: offerings + highlights */
+.brand-cols { display:grid; grid-template-columns:1fr; gap:var(--space-12); margin-top:var(--space-16); }
+@media (min-width:860px){ .brand-cols { grid-template-columns:1fr 1fr; gap:var(--space-16); } }
+.brand-col h3 { font-size:var(--text-lg); margin-bottom:var(--space-6); padding-bottom:var(--space-3); border-bottom:2px solid var(--accent); display:inline-block; }
+.brand-list { list-style:none; display:flex; flex-direction:column; gap:var(--space-4); }
+.brand-list li { position:relative; padding-left:var(--space-6); font-size:var(--text-base); color:var(--text-muted); line-height:1.55; }
+.brand-list li::before { content:""; position:absolute; left:0; top:0.55em; width:7px; height:7px; background:var(--accent); border-radius:50%; }
+.brand-list.highlights li { color:var(--text); }
+
+/* Part of LIT band */
+.brand-family { background:var(--primary); color:var(--on-dark); border-top:1px solid rgba(176,141,87,0.28); }
+.brand-family .wrap { text-align:center; padding-block:var(--space-20); }
+.brand-family .eyebrow { color:var(--accent-warm); justify-content:center; }
+.brand-family h2 { font-size:var(--text-2xl); font-weight:400; color:var(--on-dark); max-width:24ch; margin:var(--space-4) auto 0; letter-spacing:-0.01em; }
+.brand-family p { margin:var(--space-5) auto 0; color:var(--on-dark-muted); max-width:56ch; font-size:var(--text-base); line-height:1.6; }
+.brand-family .actions { margin-top:var(--space-8); display:flex; flex-wrap:wrap; gap:var(--space-4); justify-content:center; }
+
+/* Back-to-ecosystem link */
+.brand-back { display:inline-flex; align-items:center; gap:0.4em; font-size:var(--text-sm); font-weight:600; color:var(--accent); }
+.brand-back:hover { color:var(--primary); }
+
+/* ============================================================
+   ECOSYSTEM — RICH CARDS WITH THUMBNAILS (link inward)
+   ============================================================ */
+.eco-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; display:flex; flex-direction:column; transition:box-shadow var(--transition), border-color var(--transition), transform var(--transition); text-decoration:none; color:inherit; }
+.eco-card:hover { box-shadow:var(--shadow-md); border-color:var(--text-faint); }
+.eco-card:hover .eco-thumb img { transform:scale(1.04); }
+.eco-thumb { aspect-ratio:16/10; overflow:hidden; background:var(--surface-2); }
+.eco-thumb img { width:100%; height:100%; object-fit:cover; transition:transform 600ms cubic-bezier(0.16,1,0.3,1); }
+.eco-body { padding:var(--space-6); display:flex; flex-direction:column; flex:1; }
+.eco-body .cname { display:flex; align-items:center; gap:0.5rem; }
+.eco-body .dot { width:8px; height:8px; border-radius:50%; background:var(--accent); flex:none; }
+.eco-body h3 { font-size:var(--text-lg); }
+.eco-body p { margin-top:var(--space-3); font-size:var(--text-sm); color:var(--text-muted); flex:1; line-height:1.55; }
+.eco-links { margin-top:var(--space-5); display:flex; align-items:center; justify-content:space-between; gap:var(--space-4); }
+.eco-links .more { font-size:var(--text-sm); font-weight:600; color:var(--accent); display:inline-flex; align-items:center; gap:0.4em; }
+.eco-card:hover .eco-links .more { color:var(--primary); }
+.eco-links .more .arrow { transition:transform var(--transition); }
+.eco-card:hover .eco-links .more .arrow { transform:translateX(3px); }
+.eco-links .ext { font-size:var(--text-xs); color:var(--text-faint); letter-spacing:0.06em; text-transform:uppercase; z-index:2; position:relative; }
+.eco-links .ext:hover { color:var(--accent); }
+.eco-cards { display:grid; gap:var(--space-6); grid-template-columns:1fr; margin-top:var(--space-8); }
+@media (min-width:640px){ .eco-cards { grid-template-columns:repeat(2,1fr); } }
+@media (min-width:1000px){ .eco-cards { grid-template-columns:repeat(3,1fr); } }
